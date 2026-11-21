@@ -1,0 +1,14 @@
+export type Faq = { question: string; answer: string; category: "General" | "Treatment" | "Payments" | "Emergency" };
+
+export const faqs: Faq[] = [
+  { category: "General", question: "Is my first consultation really free?", answer: "Yes. Your first consultation with one of our dentists — including an examination and a personalised treatment plan — is free. X-rays, if needed, are charged separately at a nominal cost." },
+  { category: "Treatment", question: "Are treatments at your clinic painful?", answer: "We specialise in painless dentistry. We use topical numbing gel before injections, computer-controlled anaesthesia and gentle techniques. Most patients tell us it was far easier than they expected." },
+  { category: "General", question: "How do you sterilise your instruments?", answer: "Every instrument goes through a hospital-grade process: ultrasonic cleaning, sealed pouching and a Class B autoclave cycle with tracking. Single-use items like needles and suction tips are never reused." },
+  { category: "Payments", question: "Do you accept insurance or offer EMI?", answer: "We accept major health insurance where dental cover applies and help you with the paperwork. We also offer 0% EMI on treatments above ₹15,000 via leading banks and cards, plus UPI, cards and cash." },
+  { category: "Emergency", question: "Do you handle dental emergencies?", answer: "Yes. We keep same-day slots for emergencies such as severe pain, swelling, broken or knocked-out teeth. Call our emergency line and we'll advise you immediately." },
+  { category: "Treatment", question: "How long do dental implants last?", answer: "With good oral hygiene and regular check-ups, implants can last 20 years or more — often a lifetime. The crown on top may need replacing after 10–15 years." },
+  { category: "Treatment", question: "Am I too old for braces or aligners?", answer: "Not at all. Around a third of our orthodontic patients are adults. As long as your teeth and gums are healthy, you can straighten your teeth at any age." },
+  { category: "General", question: "How often should I visit the dentist?", answer: "Every six months for a check-up and cleaning is ideal for most people. If you have gum disease or a higher risk of cavities, we may suggest every three to four months." },
+  { category: "General", question: "What age should my child first see a dentist?", answer: "By their first birthday, or within six months of the first tooth appearing. Early visits help prevent decay and make children comfortable with the dentist." },
+  { category: "Payments", question: "Will I know the cost before treatment begins?", answer: "Always. After your consultation you'll receive a written treatment plan with transparent pricing. There are no hidden charges, and we'll discuss options to suit your budget." },
+];

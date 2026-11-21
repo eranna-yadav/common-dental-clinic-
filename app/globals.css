@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Design tokens — all colours live here as RGB channels so Tailwind can apply
+ * opacity modifiers (e.g. bg-primary/10). Change the palette in one place.
+ */
+@layer base {
+  :root {
+    --c-primary: 15 118 110;       /* Deep Teal   #0F766E */
+    --c-primary-dark: 17 94 89;    /* Teal hover  #115E59 */
+    --c-mint: 94 234 212;          /* Mint        #5EEAD4 */
+    --c-navy: 11 31 51;            /* Navy        #0B1F33 */
+    --c-coral: 255 122 89;         /* Coral       #FF7A59 */
+    --c-coral-dark: 242 98 63;     /* Coral hover #F2623F */
+    --c-bg: 248 250 252;           /* Soft White  #F8FAFC */
+    --c-surface: 238 246 248;      /* Ice Blue    #EEF6F8 */
+    --c-card: 255 255 255;
+    --c-ink: 51 65 85;             /* Slate       #334155 */
+    --c-heading: 11 31 51;         /* Navy        #0B1F33 */
+    --c-muted: 100 116 139;        /* Muted       #64748B */
+    --c-line: 226 232 240;         /* Border      #E2E8F0 */
+    --c-link: 15 118 110;
+    --c-success: 22 163 74;        /* #16A34A */
+    --c-error: 220 38 38;          /* #DC2626 */
+    color-scheme: light;
+  }
+
+  .dark {
+    --c-bg: 6 18 30;
+    --c-surface: 11 31 51;
+    --c-card: 14 38 60;
+    --c-ink: 203 213 225;
+    --c-heading: 241 245 249;
+    --c-muted: 148 163 184;
+    --c-line: 30 58 84;
+    --c-link: 94 234 212;
+    --c-error: 248 113 113;
+    --c-success: 74 222 128;
+    color-scheme: dark;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  body {
+    @apply bg-bg font-sans text-ink antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-heading tracking-tight;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-bg dark:ring-mint;
+  }
+  ::selection { @apply bg-mint/40 text-navy; }
+}
+
+@layer components {
+  .section { @apply py-16 sm:py-20 lg:py-24; }
+  .link { @apply font-medium text-link underline-offset-4 hover:underline; }
+  .glass { @apply border border-white/40 bg-bg/75 backdrop-blur-xl backdrop-saturate-150 dark:border-white/5; }
+
+  /* Long-form article / service copy */
+  .prose-clinic { @apply max-w-none text-base leading-relaxed text-ink sm:text-[1.0625rem]; }
+  .prose-clinic h2 { @apply mb-4 mt-10 text-2xl font-bold sm:text-3xl; }
+  .prose-clinic h3 { @apply mb-3 mt-8 text-xl font-semibold; }
+  .prose-clinic p { @apply mb-5; }
+  .prose-clinic ul { @apply mb-6 list-disc space-y-2 pl-6 marker:text-primary; }
+  .prose-clinic ol { @apply mb-6 list-decimal space-y-2 pl-6 marker:font-semibold marker:text-primary; }
+  .prose-clinic strong { @apply font-semibold text-heading; }
+  .prose-clinic blockquote { @apply my-6 rounded-r-2xl border-l-4 border-primary bg-surface px-5 py-4 italic; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .scrollbar-none { scrollbar-width: none; }
+  .scrollbar-none::-webkit-scrollbar { display: none; }
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+}
