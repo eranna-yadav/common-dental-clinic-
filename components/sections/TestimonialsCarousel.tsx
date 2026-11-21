@@ -63,7 +63,7 @@ export function TestimonialsCarousel() {
           </ul>
 
           <div className="mt-6 flex items-center justify-between gap-4">
-            <div className="flex gap-1.5" role="group" aria-label="Choose testimonial">
+            <div className="flex gap-0.5" role="group" aria-label="Choose testimonial">
               {testimonials.map((t, i) => (
                 <button
                   key={t.name}
@@ -71,7 +71,7 @@ export function TestimonialsCarousel() {
                   onClick={() => scrollTo(i)}
                   aria-label={`Show testimonial ${i + 1}`}
                   aria-current={i === index ? "true" : undefined}
-                  className="flex h-6 items-center"
+                  className="flex h-6 min-w-6 items-center justify-center"
                 >
                   <span className={cn("block h-2 rounded-full transition-all", i === index ? "w-7 bg-primary dark:bg-mint" : "w-2 bg-line hover:bg-muted")} />
                 </button>

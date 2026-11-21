@@ -40,7 +40,7 @@ export function NewsletterForm({ invert }: { invert?: boolean }) {
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="relative">
+    <form onSubmit={onSubmit} noValidate className="relative min-w-0">
       <div aria-hidden="true" className="absolute -left-[9999px]">
         <input tabIndex={-1} autoComplete="off" name="website" value={website} onChange={(e) => setWebsite(e.target.value)} />
       </div>

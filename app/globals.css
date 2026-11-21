@@ -19,7 +19,8 @@
     --c-card: 255 255 255;
     --c-ink: 51 65 85;             /* Slate       #334155 */
     --c-heading: 11 31 51;         /* Navy        #0B1F33 */
-    --c-muted: 100 116 139;        /* Muted       #64748B */
+    /* Muted: spec #64748B is 4.34:1 on Ice Blue (fails AA) → nudged to #5E6E84 (4.75:1). */
+    --c-muted: 94 110 132;         /* Muted       #5E6E84 */
     --c-line: 226 232 240;         /* Border      #E2E8F0 */
     --c-link: 15 118 110;
     --c-success: 22 163 74;        /* #16A34A */
@@ -55,7 +56,7 @@
     }
   }
   body {
-    @apply bg-bg font-sans text-ink antialiased;
+    @apply overflow-x-clip bg-bg font-sans text-ink antialiased;
     text-rendering: optimizeLegibility;
   }
   h1, h2, h3, h4, h5, h6 {

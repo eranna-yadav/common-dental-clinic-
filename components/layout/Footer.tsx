@@ -21,7 +21,7 @@ export function Footer() {
       <h2 id="footer-heading" className="sr-only">Footer</h2>
 
       <div className="border-b border-white/10">
-        <div className="mx-auto grid max-w-content gap-6 px-4 py-10 sm:px-6 md:grid-cols-2 md:items-center lg:px-8">
+        <div className="mx-auto grid max-w-content grid-cols-1 gap-6 px-4 py-10 sm:px-6 md:grid-cols-2 md:items-center lg:px-8 [&>*]:min-w-0">
           <div>
             <p className="font-display text-2xl font-bold text-white">Smile tips, straight to your inbox</p>
             <p className="mt-2 text-sm text-slate-400">One helpful email a month. No spam — unsubscribe anytime.</p>
